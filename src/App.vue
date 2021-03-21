@@ -10,16 +10,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" href="http://vuebionicle.parkernel.com/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/products.html">Products</a>
+                <a class="nav-link" href="#">Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/story.html">Story</a>
+                <a class="nav-link" href="#">Story</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/gallery.html">Gallery</a>
+                <a class="nav-link" href="#">Gallery</a>
               </li>
 			</ul>
           </div>
@@ -38,7 +38,7 @@
             <a class="nav-link" href="https://lego.com/">LEGO®</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/Zambozoo/cs260-project">Github</a>
+            <a class="nav-link" href="https://github.com/Zambozoo/bionicle-vue">Github</a>
           </li>
 		</ul>  
       </div>
