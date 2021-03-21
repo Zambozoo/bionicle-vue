@@ -1,16 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><strong>BIONICLE</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/story.html">Story</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/gallery.html">Gallery</a>
+              </li>
+			</ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  <div class="content">
+    <router-view />
   </div>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><strong>BIONICLE</strong></a>
+      <div id="navbarFooter">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://lego.com/">LEGO®</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Zambozoo/cs260-project">Github</a>
+          </li>
+		</ul>  
+      </div>
+    </div>
+  </nav>
+</div>
 </template>
-
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Cinzel, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
