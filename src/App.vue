@@ -1,50 +1,39 @@
 <template>
   <div id="app">
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><strong>BIONICLE</strong></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="http://vuebionicle.parkernel.com/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Story</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-              </li>
-			</ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  <div class="content">
-    <router-view />
-  </div>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><strong>BIONICLE</strong></a>
-      <div id="navbarFooter">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://lego.com/">LEGO®</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/Zambozoo/bionicle-vue">Github</a>
-          </li>
-		</ul>  
-      </div>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <b-navbar-brand href="#"><strong>BIONICLE</strong></b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item href="#">HOME</b-nav-item>
+            <b-nav-item href="#" disabled>PRODUCTS</b-nav-item>
+            <b-nav-item href="#">STORY</b-nav-item>
+            <b-nav-item href="#">GALLERY</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
     </div>
-  </nav>
-</div>
+    <div class="content">
+      <router-view />
+    </div>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <b-navbar-brand href="#"><strong>BIONICLE</strong></b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item href="https://lego.com/">LEGO®</b-nav-item>
+            <b-nav-item href="https://github.com/Zambozoo/bionicle-vue">Github</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+  </div>
 </template>
 <style>
 #app {

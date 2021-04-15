@@ -1,29 +1,40 @@
 <template>
-<div class="wrapper">
-  <div class="products">
-      <router-link class="product" v-for="product in products" :key="product.id" :to="'/product/' + product.id">
-        <div class="image">
-          <img :src="'/images/'+product.image">
+  <div class="wrapper">
+    <div class="products">
+      <router-link class="product" v-for="product in products" :key="product._id" :to="'/product/' + product._id">
+        <div>
+          <div class="info">
+            <h2>{{product.desc}}</h2>
+            <p>Set #: {{parseInt(product._id,16) % 1000}}</p>
+          </div>
+          <div class="image">
+            <img :src="'/images/'+product.photo.path">
+          </div>
+          <div class="info">
+            <h2>{{product.price}}</h2>
+            <p>Part Count: {{product.count}}</p>          </div>
         </div>
-        <div class="info">
-          <h1>{{product.name}}</h1>
-          <p>{{product.desc}}</p>
-          <h1>{{product.price}}</h1>
-        </div>
-    </router-link>
+      </router-link>
+    </div>
   </div>
-</div>
 </template>
 <script>
+import axios from 'axios';
 export default {
   name: 'ProductList',
   props: {
     products: Array
   },
   methods: {
-    appendCart(product) {
-      this.$root.$data.cart.push(product);
-    }
+    async getNumComments(id) {
+      try {
+        let res = await axios.get('/api/comments/' + id);
+        return res.data.length;
+      } catch(error) {
+        console.log(error);
+      }
+      return -1;
+    },
   }
 }
 </script>
@@ -39,23 +50,31 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.product div {
+  border-radius:15px;
+  background-color:#000;
+  padding:5px;
+}
 
 .product {
-  margin: 10px;
-  width: 200px;
+  margin: 5px;
+  width: 150px;
   text-decoration: none;
 }
 
-.product img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
-  object-fit: cover;
-}
 
-.product .image {
+.image {
   display: flex;
   justify-content: center;
+}
+
+.image img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 .info {
@@ -94,5 +113,31 @@ button {
 
 .auto {
   margin-left: auto;
+}
+
+.tooltipP {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltipP .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  opacity: 1;
+  /* Position the tooltip text - see examples below! */
+  position: relative;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipP:hover .tooltiptext {
+  visibility: visible;
 }
 </style>

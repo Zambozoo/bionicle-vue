@@ -81,7 +81,7 @@ let mock = [{
   {
     id: 11,
     name: "Brown Turaga",
-    price: "$6.70",
+    price: "$5.99",
     desc: "Turaga of Stone",
 	full_desc:"A peaceful yet noble hero of old. With the other turaga, he offers the toa guidance and advice.",
     image: "turaga-4.jpg"
